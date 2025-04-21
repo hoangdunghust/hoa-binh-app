@@ -1,141 +1,192 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khám Phá Hòa Bình</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
-<!-- Thanh điều hướng trên cùng -->
-<div class="top-location-bar">
-  <div class="location-info">
-    <i class="fas fa-map-marker-alt"></i>
-    <span>TP Hòa Bình, Hòa BÌnh</span>
-    <i class="fas fa-caret-down dropdown-icon"></i>
-  </div>
-  <i class="fas fa-bell notification-icon"></i>
-</div>
-
-<!-- Thanh tìm kiếm và bộ lọc -->
-<div class="search-filter-bar">
-  <div class="search-box">
-    <i class="fas fa-search"></i>
-    <input type="text" placeholder="Tìm kiếm" />
-  </div>
-  <button class="filter-btn">
-    <i class="fas fa-sliders-h"></i>
-  </button>
-</div>
-<!-- Thanh điều hướng dưới cùng -->
-
-<nav class="bottom-nav">
-  <a href="index.html" class="nav-item active">
-    <i class="fas fa-home"></i>
-    <span></span>
-  </a>
-  <a href="missions.html" class="nav-item">
-    <i class="fas fa-bullseye"></i>
-  
-  </a>
-  <a href="post.html" class="nav-item">
-    <i class="fas fa-video"></i>
-  
-  </a>
-  <a href="analytics.html" class="nav-item">
-    <i class="fas fa-chart-line"></i>
-    
-  </a>
-  <a href="profile.html" class="nav-item">
-    <i class="fas fa-user"></i>
-
-  </a>
-</nav>
-
-<!-- Danh mục địa điểm -->
-<div class="categories">
-  <strong>Trang chủ</strong>
-  <a href="#" class="view-all">Tất cả ></a>
-  <div class="category-list">
-    <button class="category-item active">
-      <i class="fas fa-water"></i> Hồ
-    </button>
-    <button class="category-item">
-      <i class="fas fa-umbrella-beach"></i> Biển
-    </button>
-    <button class="category-item">
-      <i class="fas fa-mountain"></i> Núi
-    </button>
-    <button class="category-item">
-      <i class="fas fa-tree"></i> Rừng
-    </button>
-  </div>
-</div>
-
-  <div class="container">
-    <!-- Bộ lọc -->
-    <h2 class="section-title">Loại hình</h2>
-    <div class="filter-bar">
-      <div class="filter-btn">Tất cả</div>
-      <div class="filter-btn">Văn hóa</div>
-      <div class="filter-btn">Thiên nhiên</div>
-      <div class="filter-btn">Ẩm thực</div>
-      <div class="filter-btn">Nghỉ dưỡng</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khám Phá Hòa Bình</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Thanh điều hướng trên cùng -->
+    <div class="top-location-bar">
+      <div class="location-info">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>TP Hòa Bình, Hòa BÌnh</span>
+        <i class="fas fa-caret-down dropdown-icon"></i>
+      </div>
+      <i class="fas fa-bell notification-icon"></i>
     </div>
 
-    <!-- Danh sách địa điểm -->
-    <h2 class="section-title">Địa điểm nổi bật</h2>
-    <div class="destinations">
-      <div class="destination-card">
-        <img src="maichau.jpg" alt="Mai Chau">
-        <div class="card-info">
-          <h3>Thung lũng Mai Châu</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Mai Châu</p>
-          <div class="rating-price">
-            <span><i class="fas fa-star"></i> 4.8</span>
-            <span class="price">400k</span>
-          </div>
-        </div>
+    <!-- Thanh tìm kiếm và bộ lọc -->
+    <div class="search-filter-bar">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Tìm kiếm" />
       </div>
-      <div class="destination-card">
-        <img src="suoitien.jpg" alt="Thác Gò Lào">
-        <div class="card-info">
-          <h3>Thác Gò Lào</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Tân Lạc</p>
-          <div class="rating-price">
-            <span><i class="fas fa-star"></i> 4.6</span>
-            <span class="price">150k</span>
-          </div>
-        </div>
-      </div>
-      <div class="destination-card">
-        <img src="suoitien.jpg" alt="Đập thủy điện">
-        <div class="card-info">
-          <h3>Đập thủy điện Hòa Bình</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Thành phố Hòa Bình</p>
-          <div class="rating-price">
-            <span><i class="fas fa-star"></i> 4.6</span>
-            <span class="price">10k</span>
-          </div>
-        </div>
+      <button class="filter-btn">
+        <i class="fas fa-sliders-h"></i>
+      </button>
+    </div>
+    <!-- Thanh điều hướng dưới cùng -->
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active">
+        <i class="fas fa-home"></i>
+        <span></span>
+      </a>
+      <a href="missions.html" class="nav-item">
+        <i class="fas fa-bullseye"></i>
+      </a>
+      <a href="post.html" class="nav-item">
+        <i class="fas fa-video"></i>
+      </a>
+      <a href="analytics.html" class="nav-item">
+        <i class="fas fa-chart-line"></i>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <i class="fas fa-user"></i>
+      </a>
+    </nav>
+
+    <!-- Danh mục địa điểm -->
+    <div class="categories">
+      <strong>Trang chủ</strong>
+      <a href="#" class="view-all">Tất cả ></a>
+      <div class="category-list">
+        <button class="category-item active">
+          <i class="fas fa-water"></i> Hồ
+        </button>
+        <button class="category-item">
+          <i class="fas fa-umbrella-beach"></i> Biển
+        </button>
+        <button class="category-item">
+          <i class="fas fa-mountain"></i> Núi
+        </button>
+        <button class="category-item"><i class="fas fa-tree"></i> Rừng</button>
       </div>
     </div>
 
-    <!-- Giọng kể bản địa -->
-    <h2 class="section-title">Giọng kể bản địa</h2>
-    <div class="local-voices">
-      <div class="voice-card">
-        <img src="codao.png" alt="Bà Mẩy">
-        <h4>Bà Mẩy</h4>
-        <p>56 tuổi - Nghề dệt thổ cẩm</p>
+    <div class="container">
+      <!-- Bộ lọc -->
+      <h2 class="section-title">Loại hình</h2>
+      <div class="filter-bar">
+        <div class="filter-btn">Tất cả</div>
+        <div class="filter-btn">Văn hóa</div>
+        <div class="filter-btn">Thiên nhiên</div>
+        <div class="filter-btn">Ẩm thực</div>
+        <div class="filter-btn">Nghỉ dưỡng</div>
       </div>
-      <div class="voice-card">
-        <img src="bacgiang.png" alt="Ông Sình">
-        <h4>Ông Sình</h4>
-        <p>62 tuổi - Nghệ nhân khèn Mông</p>
+
+      <!-- Danh sách địa điểm -->
+      <h2 class="section-title">Địa điểm nổi bật</h2>
+      <div class="destinations">
+        <div class="destination-card">
+          <img src="maichau.jpg" alt="Mai Chau" />
+          <div class="card-info">
+            <h3>Thung lũng Mai Châu</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Mai Châu</p>
+            <div class="rating-price">
+              <span><i class="fas fa-star"></i> 4.8</span>
+              <span class="price">400k</span>
+            </div>
+          </div>
+        </div>
+        <div class="destination-card">
+          <img src="suoitien.jpg" alt="Thác Gò Lào" />
+          <div class="card-info">
+            <h3>Thác Gò Lào</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Tân Lạc</p>
+            <div class="rating-price">
+              <span><i class="fas fa-star"></i> 4.6</span>
+              <span class="price">150k</span>
+            </div>
+          </div>
+        </div>
+        <div class="destination-card">
+          <img src="suoitien.jpg" alt="Đập thủy điện" />
+          <div class="card-info">
+            <h3>Đập thủy điện Hòa Bình</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Thành phố Hòa Bình</p>
+            <div class="rating-price">
+              <span><i class="fas fa-star"></i> 4.6</span>
+              <span class="price">10k</span>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <h2 class="section-title">Trải nghiệm đời sống bản địa</h2>
+      <h3 class="sub-heading">
+        Tham gia vào các hoạt động văn hóa truyền thống của người dân địa
+        phương.
+      </h3>
+      <div class="experience-title">
+        <div class="experience-card">
+          <img src="lehoi.jpg" alt="Trải nghiệm văn hóa" class="exp" />
+          <p>Nấu ăn.</p>
+        </div>
+        <div class="experience-card">
+          <img src="nauan.jpg" alt="Tham gia lễ hội" class="exp" />
+          <p>Tham gia lễ hội.</p>
+        </div>
+        <div class="experience-card">
+          <img src="dangio.jpg" alt="Đan giỏ" class="exp" />
+          <p>Đan giỏ</p>
+        </div>
+        <div class="experience-card">
+          <img src="detvai.jpg" alt="Dệt Vải" class="exp" />
+          <p>Dệt vải</p>
+        </div>
+      </div>
+      <!-- Giọng kể bản địa -->
+      <h2 class="section-title">Giọng kể bản địa</h2>
+      <div class="local-voices">
+        <div class="voice-card">
+          <img src="codao.png" alt="Bà Mẩy" />
+          <h4>Bà Mẩy</h4>
+          <p>56 tuổi - Nghề dệt thổ cẩm</p>
+        </div>
+        <div class="voice-card">
+          <img src="bacgiang.png" alt="Ông Sình" />
+          <h4>Ông Sình</h4>
+          <p>62 tuổi - Nghệ nhân khèn Mông</p>
+        </div>
+      </div>
+      <h2 class="section-title">Bài đăng được yêu thích</h2>
+      <div class="posts">
+        <a href="post1.html" class="post-card">
+          <img src="post1.jpg" alt="Bài đăng 1" />
+          <h3>Đèo Đá Trắng - Vẻ Đẹp Cứ Ngỡ Trời Âu Ở Hòa Bình</h3>
+          <p>Địa điểm: Đèo Đá Trắng</p>
+          <p>Người đăng: Nguyễn Văn A</p>
+        </a>
+      
+        <a href="post1.html" class="post-card">
+          <img src="post2.webp" alt="Bài đăng 2" />
+          <h3>Động Đá Bạc - kỳ quan của tạo hóa</h3>
+          <p>Địa điểm: Động Đá Bạc</p>
+          <p>Người đăng: Trần Thị B</p>
+        </a>
+      
+        <a href="post1.html" class="post-card">
+          <img src="post3.webp" alt="Bài đăng 3" />
+          <h3>Khung cảnh huyền ảo bên trong động Tiên Phi</h3>
+          <p>Địa điểm: Động Tiên Phi</p>
+          <p>Người đăng: Lê Văn C</p>
+        </a>
+      
+        <a href="post1.html" class="post-card">
+          <img src="post4.webp" alt="Bài đăng 4" />
+          <h3>Thung Nai - Hòa Bình</h3>
+          <p>Địa điểm: Thung Nai</p>
+          <p>Người đăng: Phạm Văn D</p>
+        </a>
+      </div>
+      
     </div>
-  </div>
-</body>
+  </body>
 </html>
