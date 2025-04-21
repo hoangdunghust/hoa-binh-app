@@ -1,0 +1,304 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    padding-bottom: 80px; /* chừa chỗ cho thanh nav */
+  }
+
+  header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h2.section-title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .filter-bar, .local-voices, .destinations {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .filter-btn, .voice-card, .destination-card {
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+  }
+
+  .destination-card {
+    width: 240px;
+    overflow: hidden;
+  }
+
+  .destination-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .destination-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .card-info p {
+    font-size: 0.9rem;
+    color: gray;
+  }
+
+  .rating-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .price {
+    color: #00A8FF;
+    font-weight: bold;
+  }
+
+  .voice-card {
+    width: 200px;
+  }
+
+  .voice-card img {
+    width: 100%;
+    border-radius: 12px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .voice-card h4 {
+    margin: 0.5rem 0 0.2rem;
+  }
+
+  .voice-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: gray;
+  }
+  .top-location-bar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 16px;
+font-size: 14px;
+color: #333;
+}
+
+.location-info {
+display: flex;
+align-items: center;
+gap: 6px;
+color: #333;
+font-weight: 500;
+}
+
+.notification-icon {
+font-size: 18px;
+color: #0e0e0e;
+}
+
+.dropdown-icon {
+font-size: 12px;
+color: #888;
+}
+
+.search-filter-bar {
+display: flex;
+align-items: center;
+padding: 0 16px;
+gap: 10px;
+margin-top: 8px;
+}
+
+.search-box {
+flex: 1;
+display: flex;
+align-items: center;
+background: #f1f1f1;
+border-radius: 12px;
+padding: 8px 12px;
+}
+
+.search-box i {
+color: #888;
+margin-right: 8px;
+}
+
+.search-box input {
+border: none;
+background: transparent;
+outline: none;
+width: 100%;
+}
+
+.filter-btn {
+background-color: #009688;
+border: none;
+border-radius: 12px;
+padding: 10px;
+color: white;
+font-size: 16px;
+}
+
+.categories {
+padding: 0 16px;
+margin-top: 16px;
+}
+
+.categories .view-all {
+float: right;
+font-size: 13px;
+color: #888;
+text-decoration: none;
+
+}
+
+.category-list {
+display: flex;
+gap: 12px;
+margin-top: 16px;
+overflow-x: auto;
+}
+
+.category-item {
+border: none;
+background-color: #f0f0f0;
+padding: 6px 12px;
+border-radius: 20px;
+display: flex;
+align-items: center;
+gap: 6px;
+font-size: 14px;
+cursor: pointer;
+white-space: nowrap;
+}
+
+.category-item.active {
+background-color: #009688;
+color: white;
+}
+
+.category-item img {
+width: 20px;
+height: 20px;
+}
+.category-item i {
+    font-size: 16px;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .bottom-nav .nav-item {
+    text-align: center;
+    color: #999;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .bottom-nav .nav-item.active,
+  .bottom-nav .nav-item:hover {
+    color: #00bcd4; /* Màu xanh ngọc giống ảnh */
+  }
+  
+
+  /* nhiệm vụ */
+  .missions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .mission-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .mission-card.completed {
+    opacity: 0.6;
+  }
+  
+  .mission-info h4 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .mission-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .mission-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .points {
+    color: #00A8FF;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  
+  .mission-btn {
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .completed-label {
+    color: green;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  

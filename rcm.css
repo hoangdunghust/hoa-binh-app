@@ -1,0 +1,43 @@
+.recommendations {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .suggestion {
+    text-align: center;
+  }
+  
+  .suggestion img {
+    width: 150px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .suggestion p {
+    margin-top: 8px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    padding: 50px 0 0 0;
+  }
+      /* Nút quay lại trang chủ */
+      .back-btn {
+        background-color: #f44336;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+  
+      .back-btn:hover {
+        background-color: #d32f2f;
+      }

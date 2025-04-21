@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng Bài Viết và Video</title>
+  <link rel="stylesheet" href="post.css" />\
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Nội dung chính -->
+  <div class="container">
+    <h2 class="section-title">Đăng Bài Viết & Video</h2>
+    <form id="postForm" class="post-form">
+      <input type="text" name="title" placeholder="Tiêu đề bài viết" required />
+      <textarea name="content" placeholder="Nội dung bài viết" required></textarea>
+      <input type="file" name="video" accept="video/*" />
+      <h2 class="section-title">📍 Check-In Vị Trí Của Bạn</h2>
+      <div id="map"></div>
+      <button class="checkin-btn" onclick="checkIn()">Check-in</button> 
+    </form>
+  </div>
+<!-- check-in -->
+
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+      <i class="fas fa-home"></i>
+      <span></span>
+    </a>
+    <a href="missions.html" class="nav-item">
+      <i class="fas fa-bullseye"></i>
+    
+    </a>
+    <a href="post.html" class="nav-item">
+      <i class="fas fa-video"></i>
+    
+    </a>
+    <a href="analytics.html" class="nav-item">
+      <i class="fas fa-chart-line"></i>
+      
+    </a>
+    <a href="profile.html" class="nav-item">
+      <i class="fas fa-user"></i>
+  
+    </a>
+  </nav>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    let map, marker;
+
+    function initMap(lat = 21.033, lng = 105.85) {
+      map = L.map('map').setView([lat, lng], 14);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      marker = L.marker([lat, lng]).addTo(map)
+        .bindPopup('Vị trí của bạn!')
+        .openPopup();
+    }
+
+    function locateUser() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const { latitude, longitude } = position.coords;
+            if (map && marker) {
+              marker.setLatLng([latitude, longitude]);
+              map.setView([latitude, longitude], 14);
+              marker.bindPopup('Bạn đang ở đây!').openPopup();
+            } else {
+              initMap(latitude, longitude);
+            }
+          },
+          error => {
+            alert("Không thể lấy vị trí của bạn, dùng vị trí mặc định.");
+            initMap();
+          }
+        );
+      } else {
+        alert("Trình duyệt không hỗ trợ định vị.");
+        initMap();
+      }
+    }
+
+    function checkIn() {
+      const latlng = marker.getLatLng();
+      localStorage.setItem('checkin-location', JSON.stringify({ lat: latlng.lat, lng: latlng.lng }));
+      alert('✅ Bạn đã check-in tại: ' + latlng.lat.toFixed(5) + ', ' + latlng.lng.toFixed(5));
+    }
+
+
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    loadCheckInLocation();
+  </script>
+
+</body>
+</html>

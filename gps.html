@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gắn GPS</title>
+  <link rel="stylesheet" href="gps.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+</head>
+<body>
+
+  <div class="container">
+    <h2>📍 Khám Phá Vị Trí Của Bạn</h2>
+    <div id="map"></div>
+    <button class="checkin-btn" onclick="checkIn()">Check-in</button>
+    <button class="back-btn" onclick="goBack()">Quay lại Trang Chủ</button>
+  </div>
+
+  <!-- Thanh điều hướng -->
+  <div class="bottom-nav">
+    <a href="gps.html" class="nav-item active">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Gắn GPS</span>
+    </a>
+    <a href="post.html" class="nav-item">
+      <i class="fas fa-video"></i>
+      <span>Đăng Bài</span>
+    </a>
+    <a href="analytics.html" class="nav-item">
+      <i class="fas fa-chart-line"></i>
+      <span>Phân Tích</span>
+    </a>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    let map, marker;
+
+    function initMap(lat = 21.033, lng = 105.85) {
+      map = L.map('map').setView([lat, lng], 14);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      marker = L.marker([lat, lng]).addTo(map)
+        .bindPopup('Vị trí của bạn!')
+        .openPopup();
+    }
+
+    function locateUser() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const { latitude, longitude } = position.coords;
+            if (map && marker) {
+              marker.setLatLng([latitude, longitude]);
+              map.setView([latitude, longitude], 14);
+              marker.bindPopup('Bạn đang ở đây!').openPopup();
+            } else {
+              initMap(latitude, longitude);
+            }
+          },
+          error => {
+            alert("Không thể lấy vị trí của bạn, dùng vị trí mặc định.");
+            initMap();
+          }
+        );
+      } else {
+        alert("Trình duyệt không hỗ trợ định vị.");
+        initMap();
+      }
+    }
+
+    function checkIn() {
+      const latlng = marker.getLatLng();
+      localStorage.setItem('checkin-location', JSON.stringify({ lat: latlng.lat, lng: latlng.lng }));
+      alert('✅ Bạn đã check-in tại: ' + latlng.lat.toFixed(5) + ', ' + latlng.lng.toFixed(5));
+    }
+
+    function loadCheckInLocation() {
+      const location = JSON.parse(localStorage.getItem('checkin-location'));
+      if (location) {
+        initMap(location.lat, location.lng);
+        setTimeout(() => {
+          alert('📌 Bạn đã từng check-in tại vị trí này.');
+        }, 500);
+      } else {
+        locateUser();
+      }
+    }
+
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    loadCheckInLocation();
+  </script>
+</body>
+</html>

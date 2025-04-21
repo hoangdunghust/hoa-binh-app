@@ -1,0 +1,212 @@
+/* Hồ sơ người dùng */
+
+.profile-container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 80px; /* chừa chỗ cho thanh nav */
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: #c5d4d7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Thanh điều hướng trong phần Profile */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .bottom-nav .nav-item {
+    text-align: center;
+    color: #999;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .bottom-nav .nav-item.active,
+  .bottom-nav .nav-item:hover {
+    color: #00bcd4; /* Màu xanh ngọc giống ảnh */
+  }
+  
+  /* Tiêu đề và thông tin của Profile */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-header .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #161718;
+
+  }
+  
+  .profile-header .location {
+    font-size: 14px;
+    color: gray;
+    margin-top: 5px;
+  }
+  
+  /* Thống kê về người dùng */
+  .profile-stats {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    color: #555;
+  }
+  
+  .profile-stats span {
+    font-size: 16px;
+  }
+  
+  .profile-stats .stat-item {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .profile-stats .stat-item span {
+    font-weight: normal;
+    color: gray;
+  }
+  
+  /* Kinh nghiệm, địa điểm đã thăm, và thông tin khác */
+  .experience, .visited-places, .other-info {
+    margin-top: 30px;
+  }
+  
+  .experience h3, .visited-places h3, .other-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .experience ul, .visited-places ul, .other-info ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .experience li, .visited-places li, .other-info li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .experience li strong, .visited-places li strong, .other-info li strong {
+    font-weight: bold;
+    color: #00A8FF;
+  }
+  
+  /* Button để sửa thông tin người dùng */
+  .edit-profile-btn {
+    background-color: #00A8FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #008bb5;
+  }
+  
+  /* Đảm bảo responsive */
+  @media screen and (max-width: 768px) {
+    .profile-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-header .avatar {
+      margin-bottom: 15px;
+    }
+  
+    .profile-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile-stats span {
+      margin-bottom: 5px;
+    }
+  }
+  .avatar-icon {
+    font-size: 3rem;
+    color: #00A8FF;
+  }
+
+
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"], textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  input[type="file"] {
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"] {
+    background-color: #47bbbb;
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #e76f51;
+  }

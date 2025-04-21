@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Thanh điều hướng -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+          <i class="fas fa-home"></i>
+          <span></span>
+        </a>
+        <a href="missions.html" class="nav-item">
+            <i class="fas fa-bullseye"></i>
+          
+          </a>
+        <a href="post.html" class="nav-item">
+          <i class="fas fa-video"></i>
+        
+        </a>
+        <a href="analytics.html" class="nav-item">
+          <i class="fas fa-chart-line"></i>
+          
+        </a>
+        <a href="profile.html" class="nav-item">
+          <i class="fas fa-user"></i>
+      
+        </a>
+      </nav>
+    <!-- Thông tin cá nhân -->
+    <div class="container">
+    <div class="profile-info">
+      <div class="profile-header">
+        <i class="fas fa-user-circle avatar-icon"></i>
+
+        <h2>Nguyễn Văn A</h2>
+        <p class="location">Hòa Bình, Việt Nam</p>
+        <div class="profile-stats">
+          <span><i class="fas fa-map-marker-alt"></i> 15 địa điểm đã đi</span>
+          <span><i class="fas fa-star"></i> 145 điểm tích lũy</span>
+        </div>
+      </div>
+
+      <!-- Kinh nghiệm -->
+      <div class="experience">
+        <h3>Kinh nghiệm du lịch</h3>
+        <ul>
+          <li>Đã tham gia các tour du lịch trong nước và quốc tế.</li>
+          <li>Yêu thích khám phá các địa điểm thiên nhiên, lịch sử.</li>
+          <li>Có kinh nghiệm viết bài chia sẻ về các địa điểm du lịch nổi bật.</li>
+        </ul>
+      </div>
+
+      <!-- Địa điểm đã đi -->
+      <div class="visited-places">
+        <h3>Địa điểm đã đi</h3>
+        <ul>
+          <li>Mai Châu</li>
+          <li>Thác Gò Lào</li>
+          <li>Đập thủy điện Hòa Bình</li>
+          <li>Hồ Hòa Bình</li>
+        </ul>
+      </div>
+
+      <!-- Thông tin thêm -->
+      <div class="other-info">
+        <h3>Thông tin khác</h3>
+        <ul>
+          <li><strong>Giới thiệu:</strong> Đam mê du lịch và chia sẻ trải nghiệm.</li>
+          <li><strong>Sở thích:</strong> Đọc sách, khám phá thiên nhiên.</li>
+          <li><strong>Liên hệ:</strong> nguyen.a@example.com</li>
+        </ul>
+      </div>
+    </div>
+    
+        <h2><i class="fas fa-house-user"></i> Đăng Ký Làm Host</h2>
+        <form id="hostForm">
+          <input type="text" name="name" placeholder="Tên Host" required />
+          <textarea name="bio" placeholder="Mô tả về bản thân" required></textarea>
+          <input type="file" name="profilePicture" accept="image/*" />
+          <img id="preview" src="" alt="Xem trước ảnh đại diện" style="max-width: 100px; margin-top: 10px; display: none;" />
+    
+          <button type="submit"><i class="fas fa-paper-plane"></i> Đăng Ký</button>
+        </form>
+      </div>
+  </div>
+</body>
+<script>
+    // Xem trước ảnh đại diện
+    document.querySelector('input[name="profilePicture"]').addEventListener('change', function (e) {
+      const preview = document.getElementById('preview');
+      const file = e.target.files[0];
+      if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = 'block';
+      }
+    });
+
+    // Gửi form
+    document.getElementById("hostForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("🎉 Cảm ơn bạn đã đăng ký làm host! Chúng tôi sẽ liên hệ sớm nhất.");
+      document.getElementById("hostForm").reset();
+      document.getElementById("preview").style.display = "none";
+    });
+    </script>
+</html>

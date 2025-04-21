@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chuyển Text Thành Video</title>
+  <link rel="stylesheet" href="t-t-v.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Chuyển Text Thành Video</h2>
+    <textarea id="textInput" placeholder="Nhập văn bản..." rows="6" cols="50"></textarea>
+    <button id="convertButton">Chuyển thành Video</button>
+    <button class="back-btn" onclick="goBack()">Quay lại Trang Chủ</button> <!-- Nút quay lại -->
+    <div id="videoPreview">
+      <!-- Video preview sẽ được hiển thị ở đây -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("convertButton").onclick = function() {
+      const text = document.getElementById("textInput").value;
+      alert("Chuyển đổi văn bản thành video...");
+      // Ở đây bạn có thể gọi API hoặc sử dụng công cụ tạo video
+    };
+    function goBack() {
+      window.location.href = 'homepage.html'; // Thay đổi 'index.html' thành trang chủ của bạn
+    }
+  </script>
+
+</body>
+</html>

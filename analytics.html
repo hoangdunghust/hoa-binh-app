@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phân Tích Dữ Liệu Người Dùng</title>
+  <link rel="stylesheet" href="analytics.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h2><i class="fas fa-chart-line"></i> Phân Tích Dữ Liệu Người Dùng</h2>
+
+    <div class="stats">
+      <p>📊 Hoạt động gần đây của bạn:</p>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Đã check-in tại <strong>5 địa điểm</strong></li>
+        <li><i class="fas fa-pen"></i> Đã đăng <strong>3 bài viết</strong></li>
+        <li><i class="fas fa-calendar-check"></i> Tham gia <strong>2 sự kiện</strong></li>
+        <li><i class="fa-regular fa-star"></i> Số điểm<strong>230 điểm tích lũy</strong></li>
+      </ul>
+    </div>
+
+    <canvas id="activityChart" width="400" height="200"></canvas>
+
+    <div class="recommendations">
+      <h3><i class="fas fa-compass"></i> Gợi Ý Chuyến Đi Cho Bạn</h3>
+      <ul>
+        <li><strong>Hang Trấu:</strong> Không khí mát mẻ, cảnh quan đẹp và yên tĩnh</li>
+        <li><strong>Thung lũng mùa thu:</strong> Khung cảnh tuyệt đẹp, màu sắc rực rỡ, lý tưởng cho nghỉ dưỡng, nhiều điểm check-in lãng mạn</li>
+        <li><strong>Làng văn hóa Dân Tộc Hòa BÌnh:</strong> Trải nghiệm văn hóa dân tộc và săn mây cực chill</li>
+      </ul>
+    </div>
+
+    
+<!-- Thanh điều hướng dưới cùng -->
+
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item active">
+    <i class="fas fa-home"></i>
+    <span></span>
+  </a>
+  <a href="missions.html" class="nav-item">
+    <i class="fas fa-bullseye"></i>
+  </a>
+  <a href="post.html" class="nav-item">
+    <i class="fas fa-video"></i>
+  </a>
+  <a href="analytics.html" class="nav-item">
+    <i class="fas fa-chart-line"></i>
+  </a>
+  <a href="profile.html" class="nav-item">
+    <i class="fas fa-user"></i>
+  </a>
+</nav>
+  <script>
+    function goBack() {
+      window.location.href = 'index.html';
+    }
+
+    // Vẽ biểu đồ
+    const ctx = document.getElementById('activityChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Check-in', 'Bài viết', 'Sự kiện'],
+        datasets: [{
+          label: 'Hoạt động gần đây',
+          data: [5, 3, 2],
+          backgroundColor: ['#0000FF', '#0080FF', '#'],
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 1
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
